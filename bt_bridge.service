@@ -1,0 +1,18 @@
+[Unit]
+Description=BT MQTT Bridge
+After=network-online.target mosquitto.service
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/nodejs /root/bt_bridge/main.js
+Restart=always
+User=root
+Group=root
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/root/bt_bridge
+StandardOutput=append:/var/log/bt_bridge/main.log
+StandardError=append:/var/log/bt_bridge/error.log
+
+[Install]
+WantedBy=multi-user.target
