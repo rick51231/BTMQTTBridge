@@ -76,7 +76,7 @@ class tion3s {
         if(param==='fan_speed') {
             settings.fan_speed = (valueInt > 6 || valueInt < 1) ? 1 : valueInt;
         } else if(param==='target_temp') {
-            settings.fan_speed = (valueInt > 30 || valueInt < 0) ? 0 : valueInt;
+            settings.target_temp = (valueInt > 30 || valueInt < 0) ? 0 : valueInt;
         }  else if(param==='mode') {
             settings.mode = (valueInt > 2 || valueInt < 0) ? 0 : valueInt;
         } else if(param==='heater') {
